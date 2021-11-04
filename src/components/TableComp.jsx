@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
 
@@ -24,7 +25,24 @@ function TableComp(props) {
                 <td>{data.jenis}</td>
                 <td>
                   <Button variant="primary me-2">Update</Button>
-                  <Button variant="danger">Delete</Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => {
+                      axios
+                        .delete(
+                          `http://127.0.0.1:8000/api/inventory/${data.id}`
+                        )
+                        .then((response) => {
+                          console.log(response);
+                          window.location.reload(false);
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                        });
+                    }}
+                  >
+                    Delete
+                  </Button>
                 </td>
               </tr>
             );
