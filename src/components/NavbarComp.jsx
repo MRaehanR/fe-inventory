@@ -7,7 +7,7 @@ function NavbarComp(props) {
       <Container>
         <Navbar.Brand href="#home">Mengkeren</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="/" active>Home</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/inventory">Inventory</Nav.Link>
           <Nav.Link href="/anggota">Anggota</Nav.Link>
         </Nav>
